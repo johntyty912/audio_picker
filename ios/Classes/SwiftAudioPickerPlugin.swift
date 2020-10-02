@@ -103,6 +103,7 @@ public class SwiftAudioPickerPlugin: NSObject, FlutterPlugin, MPMediaPickerContr
         _audioPickerController?.delegate = self
         _audioPickerController?.showsCloudItems = false
         _audioPickerController?.allowsPickingMultipleItems = false
+        _audioPickerController?.showsItemsWithProtectedAssets = false
         _audioPickerController?.modalPresentationStyle = UIModalPresentationStyle.currentContext
         _viewController?.present(_audioPickerController!, animated: true, completion: nil)
     }
