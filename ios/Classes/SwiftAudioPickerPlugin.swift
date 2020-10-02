@@ -89,7 +89,7 @@ public class SwiftAudioPickerPlugin: NSObject, FlutterPlugin, MPMediaPickerContr
             // Return an error
             self._flutterResult?(nil)
         }
-        
+        _flutterResult = nil
     }
     
     public func mediaPickerDidCancel(_ mediaPicker: MPMediaPickerController)
@@ -106,7 +106,7 @@ public class SwiftAudioPickerPlugin: NSObject, FlutterPlugin, MPMediaPickerContr
         _audioPickerController?.showsItemsWithProtectedAssets = false
         _audioPickerController?.modalPresentationStyle = UIModalPresentationStyle.currentContext
         _viewController?.present(_audioPickerController!, animated: true, completion: nil)
-        _flutterResult = nil
+        
     }
     
 }
