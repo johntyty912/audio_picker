@@ -24,11 +24,6 @@ public class SwiftAudioPickerPlugin: NSObject, FlutterPlugin, MPMediaPickerContr
     
     public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
         if(call.method == "pick_audio"){
-            if (_flutterResult != nil){
-                // Return an error
-                result(nil)
-            }
-            
             _flutterResult = result
             openAudioPicker()
         }
@@ -89,7 +84,6 @@ public class SwiftAudioPickerPlugin: NSObject, FlutterPlugin, MPMediaPickerContr
             // Return an error
             self._flutterResult?(nil)
         }
-        _flutterResult = nil
     }
     
     public func mediaPickerDidCancel(_ mediaPicker: MPMediaPickerController)
